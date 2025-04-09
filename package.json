@@ -1,0 +1,14 @@
+{
+  "name": "dw3-apis",
+  "version": "1.0.0",
+  "description": "Atividade APIs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Natalia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
