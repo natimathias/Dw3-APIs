@@ -6,13 +6,15 @@ app.get('/', (req, res) => {
     res.send('Olá Mundo!')
 });
 
-
-//Arrumar
-app.get('/cnpj', (req, res) => {
-    fetch("https://brasilapi.com.br/api/cnpj/v1/" + "19131243000197")
+app.get('/cep', (req, res) => {
+    fetch("https://brasilapi.com.br/api/cep/v2/" + "89010025")
         .then((response) => response.json())
-        .then((bairro) => {
-            res.send(`Bairro: ${bairro}`);
+        .then((endereco) => {
+            res.write(`Endereço: ${endereco.street}\n`);
+            res.write(`Cidade: ${endereco.city}\n`);
+            res.write(`Estado: ${endereco.state}\n`);
+            res.write(`Bairro: ${endereco.neighborhood}`);
+            res.end();
         })
         .catch(error => {
             console.log("Erro ao acessar o link: " + error);
